@@ -8,6 +8,8 @@ const pg = require('pg');
 
 require('dotenv').config();
 app.use(cors());
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
 const PORT = process.env.PORT || 3000;
 var weatherArr = [];
 var lat;
